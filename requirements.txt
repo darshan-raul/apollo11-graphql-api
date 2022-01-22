@@ -1,0 +1,5 @@
+graphene
+fastapi[all]
+uvicorn
+pydantic
+starlette-graphene3

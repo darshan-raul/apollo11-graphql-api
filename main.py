@@ -6,6 +6,12 @@ from graphene import String as st
 from graphene import Int as int
 from graphene import List as li
 import graphene
+import logging
+
+
+import os
+main_file_name=os.environ['MAIN_FILE_NAME']
+main_func_name=os.environ['MAIN_FUNCTION_NAME']
 
 data=[
     {
@@ -43,5 +49,14 @@ schema = graphene.Schema(query=person)
 
 app.add_route("/graphql",GraphQLApp(schema,on_get=make_graphiql_handler())) 
 
+@app.get("/health")
+def get_health():
+    return "pong"
 
-print(graphene.Schema(query=person))
+@app.get("/ready")
+def get_readiness_status():
+    return "yes"
+
+@app.get("/startup")
+def get_startup_status():
+    return "healthy"
