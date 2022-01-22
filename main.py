@@ -60,3 +60,9 @@ def get_readiness_status():
 @app.get("/startup")
 def get_startup_status():
     return "healthy"
+
+@app.get("/secret")
+def get_secret():
+    with open('/etc/secrets/fastapi-name', 'r') as file:
+        data = file.read().rstrip()
+    return data
