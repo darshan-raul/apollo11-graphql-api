@@ -58,3 +58,7 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: false
+      - name: check if docker image was created
+        run: |
+          docker images
+      
