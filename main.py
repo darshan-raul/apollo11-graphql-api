@@ -6,9 +6,6 @@ from graphene import String as st
 from graphene import List as li
 import graphene
 
-main_file_name = os.environ["MAIN_FILE_NAME"]
-main_func_name = os.environ["MAIN_FUNCTION_NAME"]
-
 data = [
     {"name": "Roni", "city": "Cologne", "country": "India"},
     {"name": "John", "city": "London", "country": "UK"},
