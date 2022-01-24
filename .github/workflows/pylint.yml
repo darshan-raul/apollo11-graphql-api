@@ -21,7 +21,7 @@ jobs:
         pip install pylint
     - name: Analysing the code with pylint
       run: |
-        pylint main.py
+        pylint --fail-under 5 main.py
 
   build:
     runs-on: ubuntu-latest
