@@ -1,0 +1,4 @@
+mainTag: fastapi
+
+service:
+  Type: ClusterIp
